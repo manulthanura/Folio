@@ -1,0 +1,53 @@
+---
+import Container from "./Container.astro"
+import Timeline from "./Timeline.astro"
+import IconBar from "./IconBar.astro";
+import experiences from "./collections/experiences.json";
+---
+
+<Container>
+    <div class="">
+        <h2 class="text-3xl text-center md:text-5xl md:text-left md:mt-12 text-primary tracking-loose font-bold">About me</h2>
+
+        <div class="container mx-auto flex flex-col md:flex-row items-center my-4 md:my-12">
+            <div class="flex flex-col w-full lg:w-1/2 justify-center items-start">
+                <p class="text-sm md:text-lg text-gray-50 mb-4 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class="hidden md:block">
+                    <IconBar />
+                </div>
+            </div>
+            <div class="w-full md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-1/2 justify-center">
+                <h1 class="text-lg md:text-lg text-primary tracking-loose">Experience</h1>
+                <div class="px-5 py-5">
+                    {
+                      experiences.map((experience, loop) => {
+                        return (
+                          <>
+                            {loop == 0 || loop == 1 ? (
+                              <div class="pb-10 border-l border-gray-200">
+                                <Timeline
+                                  dates={experience.dates}
+                                  role={experience.role}
+                                  company={experience.company}
+                                  description={experience.description}
+                                  logo={experience.logo}
+                                />
+                              </div>
+                            ) : (
+                              <Timeline
+                                dates={experience.dates}
+                                role={experience.role}
+                                company={experience.company}
+                                description={experience.description}
+                                logo={experience.logo}
+                              />
+                            )}
+                          </>
+                        )
+                      })
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</Container>

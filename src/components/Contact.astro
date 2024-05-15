@@ -1,0 +1,25 @@
+---
+import Container from "./Container.astro"
+---
+
+<Container>
+    <h2 class="text-3xl text-center md:text-5xl md:text-left md:mt-12 text-primary tracking-loose font-bold">Contact</h2>
+    <p class="my-2 lg:mb-8 font-light md:text-left text-center text-back sm:text-lg">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+    <div class="py-6 px-4 mx-auto max-w-screen-md">
+        <form action="#" class="space-y-8">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-back">Your email</label>
+                <input type="email" id="email" class="shadow-sm bg-gray-700 border border-gray-300 text-back text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="name@flowbite.com" required>
+            </div>
+            <div>
+                <label for="subject" class="block mb-2 text-sm font-medium text-back ">Subject</label>
+                <input type="text" id="subject" class="block p-3 w-full text-sm text-back bg-gray-700 rounded-lg border border-gray-300 shadow-sm focus:ring-primary focus:border-primary" placeholder="Let us know how we can help you" required>
+            </div>
+            <div class="sm:col-span-2">
+                <label for="message" class="block mb-2 text-sm font-medium text-back ">Your message</label>
+                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-back bg-gray-700 rounded-lg shadow-sm border border-gray-300 focus:ring-primary focus:border-primary" placeholder="Leave a comment..."></textarea>
+            </div>
+            <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary hover:bg-black focus:ring-4 focus:outline-none focus:ring-primary">Send message</button>
+        </form>
+    </div>
+</Container>
